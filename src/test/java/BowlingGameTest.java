@@ -14,4 +14,10 @@ public class BowlingGameTest {
         assertEquals(80, game.calculateLineScore(throwScores));
     }
 
+    @Test
+    void should_get_correct_score_when_all_frames_are_strike() {
+        BowlingGame game = new BowlingGame();
+        List<Integer> throwScores = Collections.nCopies(12, 10);
+        assertEquals(300, game.calculateLineScore(throwScores));
+    }
 }
